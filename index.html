@@ -9,11 +9,30 @@
     <title>CondSystem</title>
 </head>
 <style>
+h5{
+  font-family: Lato, "Noto Sans", sans-serif;
+  font-weight: 900;
+  size: 36px;
+  line-height: 40px;
+  color: #0a2a66;
+}
+p{
+  font-family: Lato, "Noto Sans", sans-serif;
+  font-weight: 400;
+  size: 16px;
+  line-height: 22px;
+  color: #21242c;
+}
+
   .card{
-      margin-top: 100px;
+      top: 200px;
+      border-radius: 05px;
   }
   body{
-      background-color:pink;
+      background-color: #f3f1f1;
+  }
+  .inputEmail{
+    top: 12350px;
   }
 </style>
 <body>
@@ -22,20 +41,24 @@
     <div class="container">
         <div class="row">
           <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div class="card card-signin my-5">
+            <div class="shadow card card-signin my-5">
               <div class="card-body">
-                <h5 class="card-title text-center">Sign In</h5>
-                <form class="form-signin">
-                  <div class="form-label-group">
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                    <label for="inputEmail">Email address</label>
-                  </div>
-    
-                    <div class="form-label-group">
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                        <label for="inputPassword">Password</label>
-                    </div>
-                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in..</button>
+                <h5>CADASTRO</h5>
+
+                <p>Insira seu nome:  </p>
+                <div class="form-group col-md-12">
+                        <input type="text" class="form-control text-center shadow-sm" name="txt" id="txt">
+                </div>
+                Insira sua Senha:
+                <div class="form-group col-md-12">
+                    <input type="text" class="form-control text-center shadow-sm" name="txt1" id="txt1">
+                </div>
+                
+                
+                <br>
+                <input type="button" value="Entrar" class="btn btn-outline-success" onclick="verificar()">
+                <br><br>
+                <div id="res"></div>
                 </form>
 
               </div>
@@ -50,7 +73,7 @@
 
     
 
-    <h1>Sing in</h1>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <center><div class="col-sm-9 col-md-7 col-lg-5 mx-auto ">
         <div class="card card-signin my-5"></div>
         <div class="card-body">
