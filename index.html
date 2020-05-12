@@ -6,119 +6,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>CondSystem</title>
+    <title>Sign in</title>
 </head>
 <style>
-h5{
-  font-family: Lato, "Noto Sans", sans-serif;
-  font-weight: 900;
-  size: 36px;
-  line-height: 40px;
-  color: #0a2a66;
-}
-p{
-  font-family: Lato, "Noto Sans", sans-serif;
-  font-weight: 400;
-  size: 16px;
-  line-height: 22px;
-  color: #21242c;
-}
-
-  .card{
-      top: 200px;
-      border-radius: 05px;
-  }
-  body{
-      background-color: #f3f1f1;
-  }
-  .inputEmail{
-    top: 12350px;
-  }
+    .card{
+        top: 170px;
+    }
 </style>
 <body>
 
+    <div class="container ">
+        <div class="row ">
+            <aside class="col-md-4 offset-md-4" >
+            <div class="card shadow " >
+            <article class="card-body">
 
-    <div class="container">
-        <div class="row">
-          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div class="shadow card card-signin my-5">
-              <div class="card-body">
-                <h5>CADASTRO</h5>
+                <a href="" class="float-right btn btn-outline-primary">Sign up</a>
+                <h4 class="card-title mb-4 mt-1">Sign in</h4>
 
-                <p>Insira seu nome:  </p>
-                <div class="form-group col-md-12">
-                        <input type="text" class="form-control text-center shadow-sm" name="txt" id="txt">
-                </div>
-                Insira sua Senha:
-                <div class="form-group col-md-12">
-                    <input type="text" class="form-control text-center shadow-sm" name="txt1" id="txt1">
-                </div>
-                
-                
-                <br>
-                <input type="button" value="Entrar" class="btn btn-outline-success" onclick="verificar()">
-                <br><br>
-                <div id="res"></div>
+                <form>
+
+                    <div class="form-group">
+                        <label>Seu Email</label>
+                        <input class="form-control" placeholder="Jose_Gritz@gmail.com" type="email" name="txt" id="txt">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Sua Senha</label>
+                        <input class="form-control" placeholder="******" type="password" name="txt1" id="txt1">
+                    </div> <br>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block" value="Verificar" onclick="verificar()"> Login  </button>
+                    </div>   
+
                 </form>
 
-              </div>
-            </div>
-          </div>
+            </article>
         </div>
-      </div>
-
-
-
-
-
-    
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <center><div class="col-sm-9 col-md-7 col-lg-5 mx-auto ">
-        <div class="card card-signin my-5"></div>
-        <div class="card-body">
-          
-    <p>CADASTRO</p>
-
-    Insira seu nome:  
-    <div class="form-group col-md-4 ">
-            <input type="text" class="form-control text-center shadow-sm" name="txt" id="txt">
+            </aside>
+     </div>
     </div>
-    Insira sua Senha:
-    <div class="form-group col-md-4 ">
-        <input type="text" class="form-control text-center shadow-sm" name="txt1" id="txt1">
-    </div>
+
+
+</body>
+</html>
+
     
-    
-    <br>
-    <input type="button" value="Entrar" class="btn btn-outline-success" onclick="verificar()">
-    <br><br>
-    <div id="res"></div>
-        </div>
-      </div></center>
     
     
 
     <script>
         function verificar(){
-            var txtv = window.document.querySelector('input#txt')
-            var txtw = window.document.querySelector('input#txt1')
-            var res = window.document.querySelector('div#res')
-            var resultado = (txtv.value)
-            var resultado1 = (txtw.value)
-            var img = document.createElement('img')
-            img.setAttribute('id', 'foto')
+            var txtv = window.document.querySelector('input#txt')   // var "txtv" pegando informações que usuario digitar no email
+            var txtw = window.document.querySelector('input#txt1')  // var "txt1" pegando informações que usuario digitar na senh  
+            var email = (txtv.value)                            // Transforma  "txtv" em var email
+            var senha = (txtw.value)                           // Transforma  "txtw" em var senha
+            
 
-            if (resultado == resultado1 ){
-                res.innerHTML = 'ERRO Usuario e Senha Iguais!<br><br> '
-                img.setAttribute('src', 'close.png')
-                
+            // se variavel email for igual a zero imprimi na tela um alerta de  Email não informado!!
+            if (email.length == 0 ){                            
+                alert("Email não informado!!")
+                }
+            
+            // se variavel senha for igual a zero imprimi na tela um alerta de  Senha não informado!!
+            if (senha.length == 0 ){
+                alert("Senha não informado!")
             }
-            else{
-                res.innerHTML = 'Cadastrado com Sucesso !! <br><br>'
-                img.setAttribute('src', 'tick.png')
-            }
-            res.appendChild(img)
+
+            
+           
         }
     </script>
 
