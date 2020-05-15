@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Sign in</title>
+    <title>Sign up</title>
 </head>
 <style>
     .card{
@@ -28,31 +28,36 @@
 
                     <div class="form-group">
                         <label>Name</label>
-                        <input class="form-control" placeholder="Jose Gritz " type="text" name="txt" id="txt" >
+                        <input class="form-control"  required placeholder="Jose Gritz " type="text" name="nome" id="txt" value="">
+                    </div>
+                     
+                    <div class="form-group">
+                        <label>Nickname</label>
+                        <input class="form-control"  required placeholder="Jose Gritz " type="text" name="nickname" id="txt5" value="txt">
                     </div>
                     
                     <div class="form-group">
                         <label>Password</label>
-                        <input class="form-control" placeholder="*********" type="password" name="txt1" id="txt1">
+                        <input class="form-control" required placeholder="*********" type="password" name="senha1" id="txt1">
                     </div> 
                     
                     <div class="form-group">
                         <label>Repeat Password</label>
-                        <input class="form-control" placeholder="*********" type="password" name="txt2" id="txt2">
+                        <input class="form-control" required placeholder="*********" type="password" name="senha2" id="txt2">
                     </div>
                     
                     <div class="form-group">
                         <label>House Number</label>
-                        <input class="form-control" placeholder="138 " type="text" name="txt3" id="txt3">
+                        <input class="form-control" required placeholder="138 " type="text" name="numero" id="txt3">
                     </div>
                     
                     <div class="form-group">
                         <label>Block</label>
-                        <input class="form-control" placeholder="A1 " type="text" name="txt4" id="txt4">
+                        <input class="form-control" required placeholder="A1 " type="text" name="bloco" id="txt4">
                     </div><br>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block" value="Verificar" onclick="verificar()"> Register  </button>
+                        <button type="submit" required class="btn btn-primary btn-block" value="Verificar" onclick="verificar()"> Register  </button>
                     </div>   
 
                 </form>
@@ -73,13 +78,15 @@
 
     <script>
         function verificar(){
-            var txtv = window.document.querySelector('input#txt')   // var "txtv" pegando informações que usuario digitar no Nome
+            var txtv = window.document.querySelector('input#txt') // var "txtv" pegando informações que usuario digitar no Nome
+            var txti = window.document.querySelector('input#txt5')   
             var txtw = window.document.querySelector('input#txt1')  // var "txtw" pegando informações que usuario digitar na Senha 1 
             var txtx = window.document.querySelector('input#txt2')  // var "txtx" pegando informações que usuario digitar na Senha 2
             var txty = window.document.querySelector('input#txt3')  // var "txty" pegando informações que usuario digitar na Numero da casa
             var txtz = window.document.querySelector('input#txt4')  // var "txtz" pegando informações que usuario digitar na Bloco
 
-            var nome   = (txtv.value)                            // Transforma  "txtv" em var Nome
+            var nome   = (txtv.value)
+            var nickname = (txti.value)                            // Transforma  "txtv" em var Nome
             var senha1 = (txtw.value)                            // Transforma  "txtw" em var senha1
             var senha2 = (txtx.value)                            // Transforma  "txtx" em var senha2
             var numero = (txty.value)                            // Transforma  "txty" em var Numero da casa
@@ -95,12 +102,12 @@
                 }
             
             // se variavel senha for igual a zero imprime na tela um alerta de  Senha não informado!!
-            if (senha1.length == 0 && senha2.length == 0){
+            if (senha1.length == 0 || senha2.length == 0){
                 alert("Senha não informado!")
             }
             // se senha 1 for diferente de senha 2 imprime alerta de  senhas não Estão iguais!!
-            if(senha1 != senha2){
-                alert("Senhas não estao iguais!")
+            if(senha1 == senha2){
+                alert("as senhas não podem ser iguais!")
             }
             // se numero for = 0 imprime alerta de numero da casa não informado!!
             if (numero == 0){
