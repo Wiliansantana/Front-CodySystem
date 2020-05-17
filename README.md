@@ -1,5 +1,5 @@
 # Front-CodySystem
-Front End CodySystem Telas de Login e cadastro (Funcionais com JavaScript)
+Front End CodySystem Telas de Login e cadastro (Funcionais com JavaScript) Tecnologias usadas: html5, css3, javascript e bootstrap.
 
 
 ![2](https://user-images.githubusercontent.com/48594322/82122185-6d0a3580-9768-11ea-9bb5-9b8ee0dcd969.png) <br>
